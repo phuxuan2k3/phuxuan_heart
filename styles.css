@@ -118,3 +118,81 @@ body {
     left: 25vw;
     top: 25vw;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #28373b;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.heart {
+  height: 8rem;
+  width: 8rem;
+  background: linear-gradient(
+    135deg,
+    #fd972e 10.5%,
+    #fd8a78 10.5%,
+    #fd8a78 36%,
+    #fddd48 36%,
+    #fddd48 63.33%,
+    #4bc088 63.33%,
+    #4bc088 89.33%,
+    #85aff9 89.33%
+  );
+  position: relative;
+  transform: rotate(-45deg);
+  animation: rainbow 2s linear infinite;
+  background-size: 120%;
+}
+
+.heart::before {
+  position: absolute;
+  content: "";
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(
+    135deg,
+    #fd972e 33.3%,
+    #fd8a78 33.3%,
+    #fd8a78 58.75%,
+    #fddd48 58.75%
+  );
+  top: -50%;
+  border-radius: 4rem;
+  animation: rainbow 2s linear infinite;
+  background-size: 120%;
+}
+
+.heart::after {
+  position: absolute;
+  content: "";
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(
+    135deg,
+    #fddd48 40.6%,
+    #4bc088 40.6%,
+    #4bc088 66.6%,
+    #85aff9 66.6%
+  );
+  right: -50%;
+  border-radius: 4rem;
+  animation: rainbow 2s linear infinite;
+  background-size: 120%;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
